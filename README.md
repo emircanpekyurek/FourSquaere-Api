@@ -1,0 +1,1 @@
+you should to fill CLIENT_ID and CLIENT_SECRET in FoursquareLoginConstants class

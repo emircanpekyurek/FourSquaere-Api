@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/venueListFragment">
+
+    <fragment
+        android:id="@+id/venueListFragment"
+        android:name="com.pekyurek.emircan.presentation.ui.home.venues.list.VenueListFragment"
+        android:label="VenueListFragment"
+        tools:layout="@layout/fragment_venue_list">
+        <action
+            android:id="@+id/action_venueList_to_venueDetailFragment"
+            app:destination="@id/venueDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/venueDetailFragment"
+        android:name="com.pekyurek.emircan.presentation.ui.home.venues.detail.VenueDetailFragment"
+        android:label="VenueDetailFragment"
+        tools:layout="@layout/fragment_venue_detail">
+
+        <argument
+            android:name="arg_venue"
+            app:argType="com.pekyurek.emircan.domain.model.response.venues.Venue"
+            app:nullable="false" />
+
+    </fragment>
+</navigation>

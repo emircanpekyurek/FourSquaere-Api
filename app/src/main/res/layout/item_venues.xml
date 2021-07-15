@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="venue"
+            type="com.pekyurek.emircan.domain.model.response.venues.Venue" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/material_vertical_list_padding">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivVenueIcon"
+            android:layout_width="@dimen/material_vertical_list_item_image_size"
+            android:layout_height="@dimen/material_vertical_list_item_image_size"
+            android:transitionName="@{venue.imageTransitionId}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher"
+            tools:srcCompat="@mipmap/ic_launcher" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvVenueName"
+            style="@style/MaterialVerticalListTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/material_vertical_list_padding"
+            android:text="@{venue.name}"
+            android:transitionName="@{venue.nameTransitionId}"
+            app:layout_constraintBottom_toTopOf="@id/tvVenueAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivVenueIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dedeman Bostancı İstanbul Hotel &amp; Convention Center" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvVenueAddress"
+            style="@style/MaterialVerticalListSubTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{venue.location.address}"
+            android:transitionName="@{venue.addressTransitionId}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvVenueName"
+            app:layout_constraintTop_toBottomOf="@id/tvVenueName"
+            tools:text="İçerenköy Mah. Değirmen Yolu Cad. No:39B" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

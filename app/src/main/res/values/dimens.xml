@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Material Vertical List-->
+    <dimen name="material_vertical_list_padding">16dp</dimen>
+    <dimen name="material_vertical_list_item_image_size">40dp</dimen>
+    <dimen name="material_vertical_list_title_font_size">16sp</dimen>
+    <dimen name="material_vertical_list_subtitle_font_size">12sp</dimen>
+
+</resources>
